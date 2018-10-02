@@ -14,61 +14,21 @@ package com.doculet.lambda.controller;
 
 
 
-import com.doculet.lambda.model.Pet;
-import com.doculet.lambda.model.PetData;
-
-import com.doculet.lambda.model.oEmbedResponse;
-import org.springframework.web.bind.annotation.RequestBody;
+import com.doculet.lambda.model.oEmbedData;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-import java.security.Principal;
-import java.util.Optional;
-import java.util.UUID;
-
 
 @RestController
 @EnableWebMvc
 public class EmbedController {
-    /*@RequestMapping(path = "/pets", method = RequestMethod.POST)
-    public Pet createPet(@RequestBody Pet newPet) {
-        if (newPet.getName() == null || newPet.getBreed() == null) {
-            return null;
-        }
-
-        Pet dbPet = newPet;
-        dbPet.setId(UUID.randomUUID().toString());
-        return dbPet;
-    }
-
-    @RequestMapping(path = "/pets", method = RequestMethod.GET)
-    public Pet[] listPets(@RequestParam("limit") Optional<Integer> limit, Principal principal) {
-        int queryLimit = 10;
-        if (limit.isPresent()) {
-            queryLimit = limit.get();
-        }
-
-        Pet[] outputPets = new Pet[queryLimit];
-
-        for (int i = 0; i < queryLimit; i++) {
-            Pet newPet = new Pet();
-            newPet.setId(UUID.randomUUID().toString());
-            newPet.setName(PetData.getRandomName());
-            newPet.setBreed(PetData.getRandomBreed());
-            newPet.setDateOfBirth(PetData.getRandomDoB());
-            outputPets[i] = newPet;
-        }
-
-        return outputPets;
-    }*/
 
     @RequestMapping(path = "/oEmbed", method = RequestMethod.GET)
-    public oEmbedResponse getoEmbed(@RequestParam("url") String url) {
-        String docId = url.substring(url.lastIndexOf("/") + 1);
-        return new oEmbedResponse(docId);
+    public oEmbedData getoEmbed(@RequestParam("url") String url) {
+        return new oEmbedData(url);
     }
 
 }

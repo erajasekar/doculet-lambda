@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: Example Pet Store API written with SpringBoot with the aws-serverless-java-container library
+Description: Doculet Lambda functions to support embeding of Doculet documents
 
 Globals:
   Api:
@@ -27,6 +27,6 @@ Resources:
 Outputs:
   SpringBootPetStoreApi:
     Description: URL for application
-    Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/pets'
+    Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/oEmbed'
     Export:
-      Name: SpringBootPetStoreApi
+      Name: DoculetLambdaApi

@@ -2,7 +2,11 @@ package com.doculet.lambda.model;
 
 import static com.doculet.lambda.support.Constants.*;
 
-public class oEmbedResponse {
+/**
+ * oEmbedData - Model to hold oEmbed response data.
+ * @author relango
+ */
+public class oEmbedData {
 
     private String provider_url = PROVIDER_URL;
     private String provider_name = PROVIDER_NAME;
@@ -20,7 +24,7 @@ public class oEmbedResponse {
     private String author_url = AUTHOR_URL;
     private String type = TYPE;
 
-    public oEmbedResponse(String docId){
+    public oEmbedData(String docId){
         this.html = String.format(HTML_FORMAT, docId, height, width);
     }
 

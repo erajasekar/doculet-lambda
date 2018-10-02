@@ -9,7 +9,7 @@ public class Constants {
     public static final String AUTHOR_NAME = "Rajasekar Elango";
     public static final String TITLE = "Doculet "; // TODO append document name
 
-    public static final String HTML_FORMAT = "<iframe src=\"https://doculet.net/doc/%s\" " +
+    public static final String HTML_FORMAT = "<iframe src=\"%s\" " +
             "align=\"middle\" height=\"%s\" width=\"%s\" frameborder=\"0\"></iframe> ";
 
     public static int WIDTH = THUMBNAIL_WIDTH;
