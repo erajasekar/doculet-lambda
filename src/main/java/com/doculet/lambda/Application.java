@@ -1,6 +1,6 @@
-package com.amazonaws.serverless.sample.springboot;
+package com.doculet.lambda;
 
-import com.amazonaws.serverless.sample.springboot.controller.PetsController;
+import com.doculet.lambda.controller.EmbedController;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 @SpringBootApplication
-@Import({ PetsController.class })
+@Import({ EmbedController.class })
 public class Application extends SpringBootServletInitializer {
 
     // silence console logging

@@ -1,4 +1,4 @@
-package com.amazonaws.serverless.sample.springboot.filter;
+package com.doculet.lambda.filter;
 
 
 import com.amazonaws.serverless.proxy.RequestReader;
