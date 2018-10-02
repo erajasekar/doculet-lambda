@@ -1,5 +1,12 @@
+/*
+ * Copyright 2018 Doculet.net
+ */
 package com.doculet.lambda.support;
 
+/**
+ * Constants - Class to hold static constants.
+ * @author Rajasekar Elango
+ */
 public class Constants {
     public static final String PROVIDER_URL= "https://doculet.net";
     public static final String PROVIDER_NAME= "doculet.net";

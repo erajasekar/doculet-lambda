@@ -1,10 +1,13 @@
+/*
+ * Copyright 2018 Doculet.net
+ */
 package com.doculet.lambda.model;
 
 import static com.doculet.lambda.support.Constants.*;
 
 /**
  * oEmbedData - Model to hold oEmbed response data.
- * @author relango
+ * @author Rajasekar Elango
  */
 public class oEmbedData {
 

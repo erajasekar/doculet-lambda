@@ -1,7 +1,9 @@
+/*
+ * Copyright 2018 Doculet.net
+ */
 package com.doculet.lambda;
 
 import com.doculet.lambda.controller.EmbedController;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
