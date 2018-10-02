@@ -17,6 +17,7 @@ package com.doculet.lambda.controller;
 import com.doculet.lambda.model.Pet;
 import com.doculet.lambda.model.PetData;
 
+import com.doculet.lambda.model.oEmbedResponse;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -32,7 +33,7 @@ import java.util.UUID;
 @RestController
 @EnableWebMvc
 public class EmbedController {
-    @RequestMapping(path = "/pets", method = RequestMethod.POST)
+    /*@RequestMapping(path = "/pets", method = RequestMethod.POST)
     public Pet createPet(@RequestBody Pet newPet) {
         if (newPet.getName() == null || newPet.getBreed() == null) {
             return null;
@@ -62,16 +63,12 @@ public class EmbedController {
         }
 
         return outputPets;
-    }
+    }*/
 
-    @RequestMapping(path = "/pets/{petId}", method = RequestMethod.GET)
-    public Pet listPets() {
-        Pet newPet = new Pet();
-        newPet.setId(UUID.randomUUID().toString());
-        newPet.setBreed(PetData.getRandomBreed());
-        newPet.setDateOfBirth(PetData.getRandomDoB());
-        newPet.setName(PetData.getRandomName());
-        return newPet;
+    @RequestMapping(path = "/oEmbed", method = RequestMethod.GET)
+    public oEmbedResponse getoEmbed(@RequestParam("url") String url) {
+        String docId = url.substring(url.lastIndexOf("/") + 1);
+        return new oEmbedResponse(docId);
     }
 
 }
