@@ -21,7 +21,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EnableWebMvc
 public class EmbedController {
 
-    @RequestMapping(path = "/oEmbed", method = RequestMethod.GET)
+    @RequestMapping(path = "/oembed", method = RequestMethod.GET)
     public oEmbedData getoEmbed(@RequestParam("url") String url) {
         return new oEmbedData(url);
     }
