@@ -13,7 +13,7 @@ Resources:
     Properties:
       Handler: com.doculet.lambda.StreamLambdaHandler::handleRequest
       Runtime: java8
-      CodeUri: target/serverless-spring-boot-example-1.0-SNAPSHOT.jar
+      CodeUri: target/doculet-lambda-1.0-SNAPSHOT.jar
       MemorySize: 1512
       Policies: AWSLambdaBasicExecutionRole
       Timeout: 60
@@ -27,6 +27,6 @@ Resources:
 Outputs:
   SpringBootPetStoreApi:
     Description: URL for application
-    Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/oEmbed'
+    Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/oembed'
     Export:
       Name: DoculetLambdaApi
