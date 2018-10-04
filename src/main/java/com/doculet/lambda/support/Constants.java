@@ -21,7 +21,7 @@ public class Constants {
 
     public static int WIDTH = THUMBNAIL_WIDTH;
     public static int HEIGHT = THUMBNAIL_HEIGHT;
-    public static final String VERSION = "0.0.1";
+    public static final String VERSION = "1.0";
     public static final String AUTHOR_URL = "https://twitter.com/erajasekar";
     public static final String TYPE = "rich";
 

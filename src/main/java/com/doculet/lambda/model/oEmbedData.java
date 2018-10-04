@@ -26,9 +26,11 @@ public class oEmbedData {
     private String version = VERSION;
     private String author_url = AUTHOR_URL;
     private String type = TYPE;
+    private String url;
 
-    public oEmbedData(String docId){
-        this.html = String.format(HTML_FORMAT, docId, height, width);
+    public oEmbedData(String url){
+        this.url = url;
+        this.html = String.format(HTML_FORMAT, url, height, width);
     }
 
     public String getProvider_url() {
@@ -81,5 +83,9 @@ public class oEmbedData {
 
     public String getType() {
         return type;
+    }
+
+    public String getUrl() {
+        return url;
     }
 }
