@@ -3,6 +3,8 @@
  */
 package com.doculet.lambda.model;
 
+import java.util.Optional;
+
 import static com.doculet.lambda.support.Constants.*;
 
 /**
@@ -28,8 +30,12 @@ public class oEmbedData {
     private String type = TYPE;
     private String url;
 
-    public oEmbedData(String url){
+    public oEmbedData(String url, Optional<Integer> maxWidthOptional, Optional<Integer> maxHeightOptional){
         this.url = url;
+
+        maxWidthOptional.ifPresent( maxWidth -> this.width = this.width > maxWidth ? maxWidth: width );
+        maxHeightOptional.ifPresent( maxHeight -> this.height = this.height > maxHeight ? maxHeight: height );
+
         this.html = String.format(HTML_FORMAT, url, height, width);
     }
 

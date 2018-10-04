@@ -7,6 +7,9 @@ package com.doculet.lambda.controller;
 
 import com.doculet.lambda.model.oEmbedData;
 import com.doculet.lambda.model.oEmbedError;
+import com.doculet.lambda.support.Constants;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,6 +20,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.Optional;
 
 /**
  * EmbedController - Controller class to support oEmbed API.
@@ -27,14 +31,22 @@ import javax.ws.rs.core.Response;
 @EnableWebMvc
 public class EmbedController {
 
+    private static Logger log = LoggerFactory.getLogger(EmbedController.class);
+
     @GET
     @RequestMapping(path = "/oembed", method = RequestMethod.GET)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getoEmbed(@RequestParam("url") String url, @RequestParam(value = "format", defaultValue = "json") String format) {
+    public oEmbedData getoEmbed(@RequestParam("url") String url,
+                                @RequestParam(value = "format", defaultValue = "json") String format,
+                                @RequestParam(value = "maxwidth") Optional<Integer> maxWidth,
+                                @RequestParam(value = "maxheight") Optional<Integer> maxHeight) {
 
         if (!format.equals("json")){
-            return Response.serverError().entity(new oEmbedError("Only json format is supported")).build();
+            // todo better error handling
+            String msg = format + " is not supported";
+            log.error("msg");
+            throw new RuntimeException(msg);
         }
-        return Response.status(Response.Status.OK).entity(new oEmbedData(url)).build();
+        return new oEmbedData(url, maxWidth, maxHeight);
     }
 }
