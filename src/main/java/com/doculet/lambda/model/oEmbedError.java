@@ -3,10 +3,10 @@
  */
 package com.doculet.lambda.model;
 
-public class Error {
+public class oEmbedError {
     private String message;
 
-    public Error(String errorMessage) {
+    public oEmbedError(String errorMessage) {
         message = errorMessage;
     }
 
