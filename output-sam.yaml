@@ -13,7 +13,7 @@ Outputs:
 Resources:
   PetStoreFunction:
     Properties:
-      CodeUri: s3://doculet-lambda/9af66ba0beec2cac0f85bcc520ff8ca4
+      CodeUri: s3://doculet-lambda/33e705fcac0fad3b31c170be05ba00ea
       Events:
         GetResource:
           Properties:
