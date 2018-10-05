@@ -5,6 +5,7 @@ package com.doculet.lambda.controller;
 
 
 
+import com.doculet.lambda.NotImplementedException;
 import com.doculet.lambda.model.oEmbedData;
 import com.doculet.lambda.model.oEmbedError;
 import com.doculet.lambda.support.Constants;
@@ -43,9 +44,9 @@ public class EmbedController {
 
         if (!format.equals("json")){
             // todo better error handling
-            String msg = format + " is not supported";
+            String msg = format + " format is not supported";
             log.error("msg");
-            throw new RuntimeException(msg);
+            throw new NotImplementedException(msg);
         }
         return new oEmbedData(url, maxWidth, maxHeight);
     }
