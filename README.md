@@ -15,7 +15,7 @@ To build and install you will need [Maven](https://maven.apache.org/) and the [A
 
 * You will need an AWS S3 bucket to store the artifacts for deployment. So create S3 bucket.
 
-*  Run the following command 
+* Run the following command 
 
   ```sh
   aws cloudformation package --template-file sam.yaml --output-template-file output-sam.yaml --s3-bucket <YOUR S3 BUCKET NAME>
